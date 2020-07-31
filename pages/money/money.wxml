@@ -1,0 +1,13 @@
+<view>
+	<banner bind:reqMoney="reqMoney"></banner>
+	<view wx:if="{{moneyList.length>0}}">
+		<view wx:for="{{moneyList}}" wx:for-item="moneylist" wx:key="date">
+			<money moneylist="{{moneylist}}"></money>
+		</view>
+	</view>
+	<view wx:else class="money-no">
+		<text>您还没有任何消费记录</text>
+		<text>赶快去记录一笔吧~</text>
+	</view>
+	<tabbar tabbar="{{tabbar}}"></tabbar>
+</view>

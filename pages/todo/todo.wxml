@@ -1,0 +1,4 @@
+<view class="container">
+	<navigator url="./todolist/todolist?item=today">Today</navigator>
+	<navigator url="./todolist/todolist?item=tomorrow">Tomorrow</navigator>
+</view>

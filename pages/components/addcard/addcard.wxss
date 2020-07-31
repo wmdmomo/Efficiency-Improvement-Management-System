@@ -1,0 +1,66 @@
+/* pages/components/addcard/addcard.js.wxss */
+.add-outline {
+  padding: 20px;
+}
+.del-image{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.del-out{
+  width:40px;
+}
+.del-out image {
+  width: 20px;
+  height: 20px;
+}
+
+.add-item {
+  margin-bottom: 10px;
+}
+
+.item-tags {
+  display: flex;
+  flex-direction: row;
+}
+
+.add-tag {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.add-radio {
+  display: flex;
+  justify-content: center;
+}
+.add-radio button{
+  width: 120px;
+  font-weight: 400;
+}
+
+.tag-image {
+  width: 20px;
+  height: 20px;
+}
+
+.tag {
+  padding: 4px;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  background-color: #52616b;
+}
+
+.tag0 {
+  background-color: teal;
+}
+
+.tag1 {
+  background-color: #ffaa64;
+}
+
+.tag2 {
+  background-color: tomato;
+}

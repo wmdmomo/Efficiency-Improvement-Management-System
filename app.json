@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/todo/todo",
+    "pages/daka/daka",
+    "pages/feel/feel",
+    "pages/money/money",
+    "pages/todo/todolist/todolist",
+    "pages/addmoney/addmoney",
+    "pages/figure/figure"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "color": "#979795",
+    "selectedColor": "#1c1c1b",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "明细",
+        "iconPath": "tabbarComponent/icon/detail.png",
+        "selectedIconPath": "tabbarComponent/icon/detail1.png"
+      },
+      {
+        "pagePath": "pages/money/money",
+        "text": "明细",
+        "iconPath": "tabbarComponent/icon/detail.png",
+        "selectedIconPath": "tabbarComponent/icon/detail1.png"
+      },
+      {
+        "pagePath": "pages/addmoney/addmoney",
+        "text": "添加",
+        "iconPath": "tabbarComponent/icon/detail.png",
+        "selectedIconPath": "tabbarComponent/icon/detail1.png"
+      },
+      {
+
+        "pagePath": "pages/figure/figure",
+        "text": "图表",
+        "iconPath": "tabbarComponent/icon/figure.png",
+        "selectedIconPath": "tabbarComponent/icon/figure1.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container">
+	<view class="userinfo">
+		<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+		<block wx:else>
+			<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+			<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+		</block>
+	</view>
+	<view class="block-all">
+		<view class="block-group">
+			<navigator class="block-inside" url="../todo/todo">
+				<image src="./image/todo.png"></image>
+				<text>Todo</text>
+			</navigator>
+			<navigator class="block-inside" url="../daka/daka">
+				<image src="./image/daka.png"></image>
+				<text>打卡</text>
+			</navigator>
+		</view>
+		<view class="block-group">
+			<navigator class="block-inside" url="../feel/feel">
+				<image src="./image/riji.png"></image>
+				<text>心情</text>
+			</navigator>
+			<navigator class="block-inside" url="../money/money" open-type="switchTab">
+				<image src="./image/jizhang.png"></image>
+				<text>记账</text>
+			</navigator>
+		</view>
+	</view>
+
+</view>

@@ -1,0 +1,15 @@
+<wxs module="format" src="../../../utils/format.wxs"></wxs>
+<view class="card-outline">
+	<view class="card-container" wx:if="{{todoList.length>0&&toggle}}">
+		<view class="card-top {{'title-color'+format.titleFixed(title)}}" bindtap="chToggle">{{title}}</view>
+		<view class="card-inside">
+			<view wx:for="{{todoList}}" wx:key="id" class="card-list">
+				<text class="{{item.flag==1?'list-do':''}}">{{item.detail}}</text>
+				<switch type="checkbox" checked="{{item.flag}}" data-index="{{index}}" bindchange="switchflag"></switch>
+			</view>
+		</view>
+	</view>
+	<view class="card-container" wx:else>
+		<view class="card-top-other {{'title-color'+format.titleFixed(title)}}" bindtap="chToggle">{{title}}</view>
+	</view>
+</view>

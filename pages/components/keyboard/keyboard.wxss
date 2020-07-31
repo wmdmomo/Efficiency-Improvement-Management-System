@@ -1,0 +1,48 @@
+/* pages/components/keyboard/keyboard.wxss */
+.key-all {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.key-left{
+  flex:0 0 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.key-right{
+  flex:0 0 25%;
+}
+.key-row{
+  flex: 0 0 25%;
+  display: flex;
+  justify-content: space-between;
+  /* 不要缩小 */
+}
+.key-item {
+  /* 项目空间不足的话要缩小 */
+  flex: 0 1 33.33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #3d4454;
+  color: white;
+  border-right: 1px solid #343b4b;
+  border-bottom: 1px solid #343b4b;
+}
+.key-item-ano{
+  flex: 0 1 66.67%;
+}
+.fun-item{
+  flex: 0 1 50%;
+}
+.fun-item-sub {
+  flex: 0 1 50%;
+  background-color: #e85862;
+}
+.key-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}

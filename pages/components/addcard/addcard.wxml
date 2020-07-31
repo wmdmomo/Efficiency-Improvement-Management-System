@@ -1,0 +1,27 @@
+<!--pages/components/addcard/addcard.js.wxml-->
+<view class="add-outline" wx:if="{{isClose}}">
+	<view class="add-item add-container">
+		<view class="del-image">
+			<view class="del-out">
+				<image src="./image/del.png" bindtap="changeDel"></image>
+			</view>
+
+		</view>
+		<view class="add-inside">
+			<view class="add-item">
+				<input model:value="{{isDetail}}" placeholder="请输入你要做的事情"></input>
+			</view>
+			<view class="add-item item-tags">
+				<image class="tag-image" src="./image/tag.png"></image>
+				<view class="add-tag">
+					<view class="tag {{isTag==2?'tag2':''}}" data-tags="2" bindtap="changeTag">紧急</view>
+					<view class="tag {{isTag==1?'tag1':''}}" data-tags="1" bindtap="changeTag">一般</view>
+					<view class="tag {{isTag==0?'tag0':''}}" data-tags="0" bindtap="changeTag">日常</view>
+				</view>
+			</view>
+			<view class="add-radio">
+				<button bindtap="addSubmit">提交</button>
+			</view>
+		</view>
+	</view>
+</view>

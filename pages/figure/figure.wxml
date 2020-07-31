@@ -1,0 +1,4 @@
+<!--pages/money/figure/figure.wxml-->
+<view>
+	<tabbar tabbar="{{tabbar}}"></tabbar>
+</view>

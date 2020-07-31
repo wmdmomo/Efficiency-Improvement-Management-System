@@ -1,0 +1,44 @@
+import {addTodo} from '../../service/api'
+Component({
+  properties:{
+    todoList:{
+      type:Array,
+      value:[]
+    },
+    title:{
+      type:String
+    }
+  },
+  data:{
+    time:'',
+    detail:'',
+    tag:'',
+    flag:'',
+    toggle:true
+  },
+  
+  methods:{
+    submits:function(){
+      var addlist={
+        time:this.data.time,
+        detail:this.data.detail,
+        flag:this.data.flag,
+        tag:this.data.tag
+      }
+      addTodo(addlist)
+    },
+    switchflag:function(e){
+      this.data.todoList[e.currentTarget.dataset.index].flag=e.detail.value==true?1:0
+      this.setData({
+        todoList:this.data.todoList
+      })
+      console.log(this.data.todoList);
+    },
+    chToggle:function(){
+      this.data.toggle=!this.data.toggle
+      this.setData({
+        toggle:this.data.toggle
+      })
+    }
+  }
+})

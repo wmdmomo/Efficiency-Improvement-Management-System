@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "todocard":"../../components/todocard/todocard",
+    "addcard":"./../../components/addcard/addcard"
+  }
+}

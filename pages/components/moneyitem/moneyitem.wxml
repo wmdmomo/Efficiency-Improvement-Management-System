@@ -1,0 +1,33 @@
+<!--pages/components/moneyitem/moneyitem.wxml-->
+<wxs module="format" src="../../../utils/format.wxs"></wxs>
+<view>
+	<view class="money-title">
+		<view>
+			<text>{{format.weekFixed(moneylist.date).dateStr}}</text>
+			<text>{{format.weekFixed(moneylist.date).dayOfWeek}}</text>
+		</view>
+		<view class="title-right">
+			<view class="title-tip">
+				<text>支出:</text>
+				<text>{{outMoney}}</text>
+			</view>
+			<view>
+				<text>收入:</text>
+				<text>{{inMoney}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="money-item" wx:for="{{moneylist.details}}" wx:key="id">
+		<view class="item-icon">
+			<image src='{{pic[item.tag]}}'></image>
+		</view>
+		<view class="item-name">
+			<text>{{item.name}}</text>
+		</view>
+		<view class="item-val {{item.flag?'val-earn':''}}">
+			<view wx:if="{{item.flag==0}}">-</view>
+			<view>{{item.money}}
+			</view>
+		</view>
+	</view>
+</view>

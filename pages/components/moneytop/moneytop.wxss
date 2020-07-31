@@ -1,0 +1,53 @@
+/* pages/components/moneytop/moneytop.wxss */
+.banner-top {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #fe947e;
+  color: white;
+}
+
+.banner-title {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.banner-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+
+.item-bold {
+  margin-top: 5px;
+  font-size: 23px;
+  font-weight: 530;
+}
+
+.text-small {
+  font-weight: normal;
+  font-size: 15px;
+  margin: 0 4px;
+}
+
+.item-more {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+/*实心三角*/
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 8px solid #fef9fa;
+}

@@ -1,0 +1,13 @@
+<!--pages/components/moneyicon/moneyicon.wxml-->
+<view>
+	<swiper indicator-dots="true" interval="2000" duration="1000">
+		<block wx:for="{{newData}}" wx:key="index">
+			<swiper-item class="icon-board">
+				<view wx:for="{{item}}" wx:key="path" wx:for-item="key" class="icon-tip">
+					<image class="icon-img" src="{{key.path}}"></image>
+					<text class="icon-name">{{key.name}}</text>
+				</view>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>

@@ -1,0 +1,37 @@
+/* pages/components/moneyswitch/moneyswitch.wxss */
+.switch-inside {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.switch-item {
+  width: 100%;
+  color: black;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.item-ano {
+  background-color: #3d4454;
+  color: white;
+}
+
+.switch-item:nth-child(1) {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-left: 1px solid #3d4454;
+}
+
+.switch-item:nth-last-child(1) {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+
+}
+
+.switch-item {
+  border-top: 1px solid #3d4454;
+  border-bottom: 1px solid #3d4454;
+  border-right: 1px solid #3d4454;
+}

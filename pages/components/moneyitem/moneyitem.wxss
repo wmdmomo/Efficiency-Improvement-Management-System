@@ -1,0 +1,50 @@
+/* pages/components/moneyitem/moneyitem.wxss */
+.money-title {
+  color: #bfbfbf;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 20px 10px 10px;
+  font-size: small;
+}
+
+.money-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 8px;
+  border-bottom: 1px solid whitesmoke;
+}
+.title-right{
+  display: flex;
+  flex-direction: row;
+}
+.title-tip{
+  margin-right: 4px;
+}
+.item-icon {
+  flex: 1 1 0;
+}
+
+.item-icon image {
+  width: 40px;
+  height: 40px;
+}
+
+.item-name {
+  flex: 5 1 0;
+}
+
+.item-val {
+  display: flex;
+  flex-direction: row;
+  color: red;
+  flex: 1 1 0;
+  justify-content: flex-end;
+}
+
+.val-earn {
+  color: green;
+}

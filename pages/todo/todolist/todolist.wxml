@@ -1,0 +1,12 @@
+<view class="todo-container">
+	<text>这里是{{item}}的内容</text>
+	<todocard title="紧急" todoList="{{p2List}}"></todocard>
+	<todocard title="一般" todoList="{{p1List}}"></todocard>
+	<todocard title="日常" todoList="{{p0List}}"></todocard>
+	<view class="todo-add">
+		<image wx:if="{{!add}}" src="./image/unadd.png" bindtap="changeImg"></image>
+	</view>
+</view>
+<view wx:if="{{add}}" class="todo-shadow">
+	<addcard isClose="{{add}}" class="add-style" bindaddClose="addClose" bindaddSuc="addSuc"></addcard>
+</view>

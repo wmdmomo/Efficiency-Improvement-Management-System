@@ -1,0 +1,47 @@
+.card-outline{
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+.card-container{
+  background-color: white;
+  border-radius: 15px;
+  width:90%;
+  position: relative;
+}
+.card-inside{
+  padding: 25px 10px 10px;
+}
+.card-top{
+  padding: 2px 8px;
+  border-radius: 3px;
+  position: absolute;
+  transform:translate(50%,-50%);
+  background-color: tomato;
+  color: white;
+}
+.card-top-other{
+  padding: 10px 0;
+  border-radius: 10px;
+  background-color: tomato;
+  color: white;
+  text-align: center;
+}
+.card-list{
+  color: #4d4545;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.title-color0{
+  background-color: teal;
+}
+.title-color1{
+  background-color: #ffaa64;
+}
+.list-do{
+  color: #808080;
+  text-decoration: line-through;
+}

@@ -1,0 +1,8 @@
+<!--pages/components/moneyswitch/moneyswitch.wxml-->
+<view class="switch-inside">
+
+	<view wx:for="{{switchlist}}" wx:key="index" bindtap="switchSuc" data-tag="{{index}}" class="switch-item {{isTag==index?'item-ano':''}}">
+		{{item}}
+	</view>
+
+</view>

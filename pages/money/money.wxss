@@ -1,0 +1,8 @@
+.money-no{
+  color: #fe947e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 200px;
+  align-items: center;
+}

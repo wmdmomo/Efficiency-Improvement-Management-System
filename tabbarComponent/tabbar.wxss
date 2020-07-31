@@ -1,0 +1,42 @@
+/* pages/components/tabbar/tabbar.wxss */
+.tabbar_box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  align-items: flex-end;
+}
+.tabbar_nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20rpx;
+}
+
+.tabbar_icon {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.special-wrapper {
+  position: absolute;
+  border-radius: 50%;
+  border-top: 2rpx solid #f2f2f3;
+  padding: 6rpx;
+  transform: translateY(-100%);
+}
+.icon-text{
+  color: #acacac;
+}
+.text-ano{
+  color:#fb9584;
+}
+.special-wrapper .tabbar_icon {
+  width: 84rpx;
+  height: 84rpx;
+}

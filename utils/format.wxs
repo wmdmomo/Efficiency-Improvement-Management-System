@@ -1,0 +1,28 @@
+var Week = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
+var filter = {
+  timeFixed: function (time) {
+    var reg = getRegExp("^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])")
+    return time.match(reg)[0]
+  },
+  titleFixed: function (title) {
+    if (title == '紧急') {
+      return 2
+    } else if (title == '一般') {
+      return 1
+    } else {
+      return 0
+    }
+  },
+  weekFixed: function (date) {
+    var dateStr = date
+    var dayOfWeek = ""
+    var date = getDate(date)
+    dayOfWeek = Week[date.getDay()]
+    return {dateStr,dayOfWeek}
+  }
+}
+module.exports = {
+  timeFixed: filter.timeFixed,
+  titleFixed: filter.titleFixed,
+  weekFixed: filter.weekFixed
+}

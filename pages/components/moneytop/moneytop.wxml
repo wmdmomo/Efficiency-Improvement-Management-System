@@ -1,0 +1,28 @@
+<!--pages/components/moneytop/moneytop.wxml-->
+<view class="banner-top">
+	<view><text class="banner-title">明细</text></view>
+	<view class="banner-detail">
+		<view class="banner-item">
+			<picker mode="date" fields="month" bindchange="bindDateChange">
+				<view>{{year}}</view>
+				<view class="item-bold item-more">
+					<text>{{month}}</text>
+					<text class="text-small">月</text>
+					<view class="triangle" bindtap="monthSwitch"></view>
+				</view>
+			</picker>
+		</view>
+		<view class="banner-item">
+			<view>收入</view>
+			<view class="item-bold">0.00</view>
+		</view>
+		<view class="banner-item">
+			<view>支出</view>
+			<view class="item-bold">0.00</view>
+		</view>
+		<view class="banner-item">
+			<view>预算</view>
+			<view class="item-bold">1200</view>
+		</view>
+	</view>
+</view>

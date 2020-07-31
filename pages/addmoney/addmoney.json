@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "tabbar":"../../tabbarComponent/tabbar",
+    "keyboard":"../components/keyboard/keyboard",
+    "moneyicon":"../components/moneyicon/moneyicon",
+    "moneyswitch":"../components/moneyswitch/moneyswitch"
+  }
+}

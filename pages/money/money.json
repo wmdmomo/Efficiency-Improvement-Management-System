@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "banner":"./../components/moneytop/moneytop",
+    "money":"./../components/moneyitem/moneyitem",
+    "tabbar":"../../tabbarComponent/tabbar"
+  }
+  
+}

@@ -1,0 +1,14 @@
+<view class="tabbar_box">
+	<view wx:for="{{tabbar.list}}" wx:key="index">
+		<navigator wx:if="{{item.isSpecial}}" class="tabbar_nav" hover-class="none" url="{{item.pagePath}}" open-type="switchTab">
+			<view class="special-wrapper">
+				<image class="tabbar_icon " src="{{item.iconPath}}"></image>
+			</view>
+			<text class="icon-text {{item.selected?'text-ano':''}}" >{{item.text}}</text>
+		</navigator>
+		<navigator wx:else class="tabbar_nav" hover-class="none" url="{{item.pagePath}}" open-type="switchTab">
+			<image class="tabbar_icon" src="{{item.selected ? item.selectedIconPath : item.iconPath}}"></image>
+			<text class="icon-text {{item.selected?'text-ano':''}}">{{item.text}}</text>
+		</navigator>
+	</view>
+</view>
