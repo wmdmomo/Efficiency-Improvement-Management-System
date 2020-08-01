@@ -6,7 +6,9 @@ var util = require('../../utils/util')
 Page({
   data: {
     moneyList: [],
-    tabbar: {}
+    tabbar: {},
+    income: 0,
+    expenditure: 0
   },
   onLoad: function () {
     // 上面的top组件返回年和月的值 在调用接口
@@ -22,7 +24,9 @@ Page({
     }
     var res = await getMoney(obj)
     this.setData({
-      moneyList: res.moneyList
+      moneyList: res.newMoneyList,
+      income: res.all_income,
+      expenditure: res.all_exp
     })
 
   }

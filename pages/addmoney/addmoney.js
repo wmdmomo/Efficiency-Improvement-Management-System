@@ -54,23 +54,17 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
+  onShow: function () {},
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
+  onHide: function () {},
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
+  onUnload: function () {},
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
@@ -126,13 +120,26 @@ Page({
     })
   },
   bindDateChange: function (e) {
+    // time(外部和money内部) 和年月日都需要改变
+    var res = e.detail.value.split('-')
+    this.data.money.year = res[0]
+    this.data.money.month = res[1]
+    this.data.money.day = res[2]
+    this.data.money.time = e.detail.value
     this.setData({
-      time: e.detail.value
+      time: e.detail.value,
+      money: this.data.money
     })
   },
   goBack: function () {
+    // 跳转到前一页并且刷新数据
     wx.switchTab({
-      url: '../money/money'
+      url: '../money/money',
+      success: function () {
+        var page = getCurrentPages().pop();
+        if (page == undefined || page == null) return;
+        page.onLoad();
+      }
     })
   }
 })

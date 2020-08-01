@@ -6,3 +6,6 @@
   height: 200px;
   align-items: center;
 }
+.money-container{
+  margin-bottom: 11.5%;
+}

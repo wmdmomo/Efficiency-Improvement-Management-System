@@ -21,7 +21,7 @@
 .banner-item {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: space-between;
 }
 
 

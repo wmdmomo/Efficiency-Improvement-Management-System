@@ -1,4 +1,5 @@
 <!--pages/components/moneytop/moneytop.wxml-->
+<wxs module="format" src="../../../utils/format.wxs"></wxs>
 <view class="banner-top">
 	<view><text class="banner-title">明细</text></view>
 	<view class="banner-detail">
@@ -14,15 +15,15 @@
 		</view>
 		<view class="banner-item">
 			<view>收入</view>
-			<view class="item-bold">0.00</view>
+			<view>{{format.numberFixed(income)}}</view>
 		</view>
 		<view class="banner-item">
 			<view>支出</view>
-			<view class="item-bold">0.00</view>
+			<view>{{format.numberFixed(expenditure)}}</view>
 		</view>
 		<view class="banner-item">
 			<view>预算</view>
-			<view class="item-bold">1200</view>
+			<view>{{format.numberFixed(budget)}}</view>
 		</view>
 	</view>
 </view>

@@ -13,16 +13,24 @@ var filter = {
       return 0
     }
   },
+  numberFixed: function (num) {
+    return num.toFixed(2)
+
+  },
   weekFixed: function (date) {
     var dateStr = date
     var dayOfWeek = ""
     var date = getDate(date)
     dayOfWeek = Week[date.getDay()]
-    return {dateStr,dayOfWeek}
+    return {
+      dateStr,
+      dayOfWeek
+    }
   }
 }
 module.exports = {
   timeFixed: filter.timeFixed,
   titleFixed: filter.titleFixed,
-  weekFixed: filter.weekFixed
+  weekFixed: filter.weekFixed,
+  numberFixed: filter.numberFixed
 }

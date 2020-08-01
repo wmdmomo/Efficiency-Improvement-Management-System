@@ -6,14 +6,6 @@ Component({
   properties: {
     moneylist:{
       type:Object
-    },
-    inMoney:{
-      type:Number,
-      value:1000
-    },
-    outMoney:{
-      type:Number,
-      value:1000
     }
 
   },
@@ -26,7 +18,14 @@ Component({
       './../../image/icons/0.png',
       './../../image/icons/1.png',
       './../../image/icons/2.png',
-      './../../image/icons/3.png'
+      './../../image/icons/3.png',
+      './../../image/icons/4.png',
+      './../../image/icons/5.png',
+      './../../image/icons/6.png',
+      './../../image/icons/7.png',
+      './../../image/icons/8.png',
+      './../../image/icons/9.png',
+      './../../image/icons/10.png'
     ]
 
   },

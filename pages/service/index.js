@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:8080/test'
+const baseURL = 'http://39.97.238.253:8080/test'
 const timeout = 5000
 
 function request(url, method, params) {

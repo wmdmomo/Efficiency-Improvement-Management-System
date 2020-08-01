@@ -9,11 +9,11 @@
 		<view class="title-right">
 			<view class="title-tip">
 				<text>支出:</text>
-				<text>{{outMoney}}</text>
+				<text>{{format.numberFixed(moneylist.income)}}</text>
 			</view>
 			<view>
 				<text>收入:</text>
-				<text>{{inMoney}}</text>
+				<text>{{format.numberFixed(moneylist.expenditure)}}</text>
 			</view>
 		</view>
 	</view>

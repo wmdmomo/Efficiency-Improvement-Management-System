@@ -8,9 +8,10 @@
   bottom: 0;
   left: 0;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-  padding: 5px;
   align-items: flex-end;
+  background-color: white;
 }
+
 .tabbar_nav {
   display: flex;
   flex-direction: column;
@@ -30,12 +31,15 @@
   padding: 6rpx;
   transform: translateY(-100%);
 }
-.icon-text{
+
+.icon-text {
   color: #acacac;
 }
-.text-ano{
-  color:#fb9584;
+
+.text-ano {
+  color: #fb9584;
 }
+
 .special-wrapper .tabbar_icon {
   width: 84rpx;
   height: 84rpx;
