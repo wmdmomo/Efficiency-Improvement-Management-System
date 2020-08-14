@@ -3,13 +3,10 @@
 	<canvas type="2d" style="height:{{height}}px;width:{{width}}px" id="myCanvas" bindtap="choicePart">
 	</canvas>
 	<view class="canvas-text" bindtap="switchItem">
-		<view wx:if="{{!flag}}" class="text-inside">
-			<text class="text-title">总支出</text>
-			<text>{{exptotal}}元</text>
-		</view>
-		<view wx:else class="text-inside">
-			<text class="text-title">总收入</text>
-			<text>{{intotal}}元</text>
+		<view class="text-inside">
+			<text wx:if="{{!type}}" class="text-title">总支出</text>
+			<text wx:else>总收入</text>
+			<text>{{total}}元</text>
 		</view>
 	</view>
 </view>

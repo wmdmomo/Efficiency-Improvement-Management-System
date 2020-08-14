@@ -7,17 +7,14 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    inList: {
+    ringList: {
       type: Array
     },
-    expList: {
-      type: Array
-    },
-    intotal: {
+    total: {
       type: Number,
       value: 0
     },
-    exptotal: {
+    type: {
       type: Number,
       value: 0
     }
@@ -31,21 +28,19 @@ Component({
     canvasWidth: windWidth * 0.5,
     x_position: windWidth / 2,
     height: windWidth * 0.5 + 40,
-    textChoice: '',
-    flag: false,
     index: 0,
     exp_color: ["#ffd460", "#ffcf7f", "#ffde7d", "#f9ed69", "#fce38a"],
     in_color: ["#3c9099", "#1fab89", "#62d2a2", "#9df3c4", "#a7d7c5"],
     angleList: [],
-    radius: 0
+    radius: 0,
+    empty: false
   },
 
   ready: function () {
     var that = this
     setTimeout(function () {
-      that.showRing(that.data.expList, that.data.exptotal, 0)
+      that.showRing(that.data.ringList, that.data.total, that.data.type)
     }, 50)
-
   },
 
   /**
@@ -88,13 +83,19 @@ Component({
         index: index
       })
       this.triggerEvent('figureSwitch', {
-        type: this.data.flag,
+        type: this.data.type,
         index: this.data.index
       })
 
     },
     cailPieAngle(series, count, process = 1) {
       let startAngle = 0;
+      if (series.length == 0) {
+        return [{
+          startAngle: 0,
+          proportion: 1 * process
+        }]
+      }
       return series.map((item) => {
         item.proportion = item.val / count * process
         item.startAngle = startAngle
@@ -102,7 +103,7 @@ Component({
         return item;
       })
     },
-    drawPie(ctx, series, x, y, radius, count, line, process, flag, id) {
+    drawPie(ctx, series, x, y, radius, count, line, process, flag) {
       var pieSeries = this.cailPieAngle(series, count, process)
       this.setData({
         angleList: pieSeries
@@ -112,10 +113,24 @@ Component({
         ctx.beginPath()
         ctx.lineWidth = line
         ctx.arc(x, y, radius, item.startAngle, item.startAngle + 2 * Math.PI * item.proportion)
-        if (flag == 0)
-          ctx.strokeStyle = that.data.exp_color[index % that.data.exp_color.length]
-        else
-          ctx.strokeStyle = that.data.in_color[index % that.data.in_color.length]
+        //数组为空 前面让他有一个占了100%的单元项 还要在判断一下金钱是是否为0
+        if (pieSeries.length == 1 && this.data.total == 0) {
+          ctx.strokeStyle = "#a4a4a4"
+        } else {
+          if (flag == 0) {
+            if (index == pieSeries.length - 1 && index % 5 == 0) {
+              ctx.strokeStyle = that.data.exp_color[1]
+            } else {
+              ctx.strokeStyle = that.data.exp_color[index % that.data.exp_color.length]
+            }
+          } else {
+            if (index == pieSeries.length - 1 && index % 5 == 0) {
+              ctx.strokeStyle = that.data.in_color[1]
+            } else {
+              ctx.strokeStyle = that.data.in_color[index % that.data.in_color.length]
+            }
+          }
+        }
         ctx.stroke()
       })
     },
@@ -140,31 +155,30 @@ Component({
           this.setData({
             radius: ori_radius - 10
           })
+          if (itemlist.length == 0) {
+            this.setData({
+              total: 0
+            })
+          }
           Animation({
             duration: 1000,
             onProcess: (process) => {
-              this.drawPie(ctx, itemlist, x, y, radius, total, line, process, flag)
+              this.drawPie(ctx, itemlist, x, y, radius, this.data.total, line, process, flag)
             }
           })
-
-
         })
     },
     switchItem: function () {
-      this.data.flag = !this.data.flag
+      this.data.type = !this.data.type
       this.setData({
-        flag: this.data.flag,
+        type: this.data.type,
         index: 0
       })
       this.triggerEvent('figureSwitch', {
-        type: this.data.flag,
+        type: this.data.type,
         index: this.data.index
       })
-      if (this.data.flag) {
-        this.showRing(this.data.inList, this.data.intotal, 1)
-      } else {
-        this.showRing(this.data.expList, this.data.exptotal, 0)
-      }
+      this.showRing(this.data.ringList, this.data.total, this.data.type)
     }
   }
 })

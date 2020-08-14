@@ -1,6 +1,6 @@
 <!--pages/components/figureitem/figureitem.wxml-->
 <wxs module="format" src="../../../utils/format.wxs"></wxs>
-<view class="figure-all" wx:if="{{itemList}}">
+<view class="figure-all" wx:if="{{itemList.length!=0}}">
 	<view class="figure-banner">
 		<view class="banner-icon" wx:if="{{itemList.tag>=0}}">
 			<image src="{{format.pathFixed(itemList.tag)}}"></image>

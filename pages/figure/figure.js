@@ -16,6 +16,7 @@ Page({
     exp_list: [],
     exp_val: 0,
     choiceList: {},
+    ring_list: [],
     choiceTotal: 0,
     choiceType: 0,
     choiceIndex: 0
@@ -38,30 +39,46 @@ Page({
       usr: app.globalData.userInfo.nickName
     }
     var ans = await getFigure(obj)
+    // 要考虑一下当收入或支出的数组为空时的情况 并且每次请求的时候 圆环要回到支出的初始状态
+    // 选择ring这个组件 执行画图的方法
+
+    var title = ''
+    var list = []
+    if (ans.expList.length > 0) {
+      list = ans.expList[0]
+      title = app.globalData.iconlist[ans.expList[0].tag].name
+    }
     this.setData({
       in_val: ans.in_money,
       exp_val: ans.exp_money,
       in_list: ans.incomeList,
       exp_list: ans.expList,
-      choiceList: ans.expList[0],
+      choiceList: list,
       choiceTotal: ans.exp_money,
-      choiceType: 0
+      choiceType: 0,
+      typeTitle: title,
+      ring_list: ans.expList
     })
-
+    let ring = this.selectComponent('#ring_id')
+    ring.showRing(this.data.ring_list, this.data.choiceTotal, 0)
   },
   figureSwitch: function (e) {
-    var type = Number(e.detail.type)
+    var type = e.detail.type
     var index = e.detail.index
+    var ring_list = type ? this.data.in_list : this.data.exp_list
     var total = type ? this.data.in_val : this.data.exp_val
-    var list = type ? this.data.in_list[index] : this.data.exp_list[index]
-    var typeTitle = app.globalData.iconlist[list.tag].name
-    console.log("LOOK " + type,index);
-
+    var list = []
+    var typeTitle = ''
+    if (ring_list.length > 0) {
+      list = type ? this.data.in_list[index] : this.data.exp_list[index]
+      typeTitle = app.globalData.iconlist[list.tag].name
+    }
     this.setData({
       choiceType: type,
       choiceTotal: total,
       choiceList: list,
-      typeTitle: typeTitle
+      typeTitle: typeTitle,
+      ring_list: ring_list
     })
   }
 })

@@ -3,7 +3,7 @@
 	<banner bind:reqMoney="reqMoney" type="0"></banner>
 	<view class="figure-inside">
 		<tabbar tabbar="{{tabbar}}"></tabbar>
-		<ring expList="{{exp_list}}" exptotal="{{exp_val}}" inList="{{in_list}}" intotal="{{in_val}}" bind:figureSwitch="figureSwitch"></ring>
+		<ring id="ring_id" ringList="{{ring_list}}" total="{{choiceTotal}}" type="{{choiceType}}" bind:figureSwitch="figureSwitch"></ring>
 		<figureitem itemList="{{choiceList}}" total="{{choiceTotal}}" type="{{choiceType}}" typeTitle="{{typeTitle}}"></figureitem>
 	</view>
 </view>
