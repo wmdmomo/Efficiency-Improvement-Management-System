@@ -30,6 +30,12 @@
   border-right: 1px solid #343b4b;
   border-bottom: 1px solid #343b4b;
 }
+.active{
+  /* background-color: #343b4bda; */
+  box-shadow:0px 0px 10px #bbbec4 inset;
+}
+
+
 .key-item-ano{
   flex: 0 1 66.67%;
 }
@@ -39,6 +45,9 @@
 .fun-item-sub {
   flex: 0 1 50%;
   background-color: #e85862;
+}
+.hover-item-ano{
+  background-color: #e85862c5;
 }
 .key-col {
   display: flex;

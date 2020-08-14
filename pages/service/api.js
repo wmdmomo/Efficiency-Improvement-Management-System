@@ -9,6 +9,9 @@ export function addTodo(list){
 export function getMoney(params){
   return request('/getMoney','get',params)
 }
+export function getFigure(params){
+  return request('/getFigure','get',params)
+}
 export function addMoney(list){
   return request('/addMoney','post',list)
 }

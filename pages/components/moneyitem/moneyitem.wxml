@@ -9,17 +9,17 @@
 		<view class="title-right">
 			<view class="title-tip">
 				<text>支出:</text>
-				<text>{{format.numberFixed(moneylist.income)}}</text>
+				<text wx:if="{{moneylist.expenditure>=0}}">{{format.numberFixed(moneylist.expenditure)}}</text>
 			</view>
 			<view>
 				<text>收入:</text>
-				<text>{{format.numberFixed(moneylist.expenditure)}}</text>
+				<text wx:if="{{moneylist.income>=0}}">{{format.numberFixed(moneylist.income)}}</text>
 			</view>
 		</view>
 	</view>
 	<view class="money-item" wx:for="{{moneylist.details}}" wx:key="id">
 		<view class="item-icon">
-			<image src='{{pic[item.tag]}}'></image>
+			<image src="{{format.pathFixed(item.tag)}}"></image>
 		</view>
 		<view class="item-name">
 			<text>{{item.name}}</text>

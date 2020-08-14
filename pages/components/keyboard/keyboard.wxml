@@ -2,29 +2,29 @@
 <view class="key-all">
 	<view class="key-left">
 		<view class="key-row">
-			<view class="key-item" data-key="1" bindtap="tapkey">1</view>
-			<view class="key-item" data-key="2" bindtap="tapkey">2</view>
-			<view class="key-item" data-key="3" bindtap="tapkey">3</view>
+			<view class="key-item" hover-class="active" hover-stay-time="100" data-key="1" bindtap="tapkey">1</view>
+			<view class="key-item" hover-class="active" hover-stay-time="100" data-key="2" bindtap="tapkey">2</view>
+			<view class="key-item" hover-class="active" hover-stay-time="100" data-key="3" bindtap="tapkey">3</view>
 		</view>
 		<view class="key-row">
-			<view class="key-item" data-key="4" bindtap="tapkey">4</view>
-			<view class="key-item" data-key="5" bindtap="tapkey">5</view>
-			<view class="key-item" data-key="6" bindtap="tapkey">6</view>
+			<view class="key-item" hover-class="active" hover-stay-time="100" data-key="4" bindtap="tapkey">4</view>
+			<view class="key-item" hover-class="active" hover-stay-time="100" data-key="5" bindtap="tapkey">5</view>
+			<view class="key-item" hover-class="active" hover-stay-time="100" data-key="6" bindtap="tapkey">6</view>
 		</view>
 		<view class="key-row">
-			<view class="key-item" data-key="7" bindtap="tapkey">7</view>
-			<view class="key-item" data-key="8" bindtap="tapkey">8</view>
-			<view class="key-item" data-key="9" bindtap="tapkey">9</view>
+			<view class="key-item" hover-class="active" hover-stay-time="100" data-key="7" bindtap="tapkey">7</view>
+			<view class="key-item" hover-class="active" hover-stay-time="100" data-key="8" bindtap="tapkey">8</view>
+			<view class="key-item" hover-class="active" hover-stay-time="100" data-key="9" bindtap="tapkey">9</view>
 		</view>
 		<view class="key-row">
-			<view class="key-item" data-key="." bindtap="tapkey">.</view>
-			<view class="key-item key-item-ano" data-key="0" bindtap="tapkey">0</view>
+			<view class="key-item" hover-class="active" hover-stay-time="100" data-key="." bindtap="tapkey">.</view>
+			<view class="key-item key-item-ano" hover-class="active" hover-stay-time="100" data-key="0" bindtap="tapkey">0</view>
 		</view>
 	</view>
 	<view class="key-right">
 		<view class="key-col">
-			<view class="key-item fun-item" bindtap="delkey">退格</view>
-      <view class="key-item fun-item-sub" bindtap="subkey">确定</view>
+			<view class="key-item fun-item" hover-class="active" hover-stay-time="100" data-key="11" bindtap="delkey">退格</view>
+      <view class="key-item fun-item-sub" hover-class="active" hover-stay-time="100" data-key="12" bindtap="subkey">确定</view>
 		</view>
 	</view>
 </view>

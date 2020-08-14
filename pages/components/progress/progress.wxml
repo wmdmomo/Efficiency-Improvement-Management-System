@@ -1,0 +1,15 @@
+<!--pages/components/progress/progress.wxml-->
+<view class="canvas-out">
+	<canvas type="2d" style="height:{{height}}px;width:{{width}}px" id="myCanvas" bindtap="choicePart">
+	</canvas>
+	<view class="canvas-text" bindtap="switchItem">
+		<view wx:if="{{!flag}}" class="text-inside">
+			<text class="text-title">总支出</text>
+			<text>{{exptotal}}元</text>
+		</view>
+		<view wx:else class="text-inside">
+			<text class="text-title">总收入</text>
+			<text>{{intotal}}元</text>
+		</view>
+	</view>
+</view>

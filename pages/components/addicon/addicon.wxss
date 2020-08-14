@@ -1,0 +1,45 @@
+/* pages/components/addicon/addicon.wxss */
+.icon-out{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.icon-shadow{
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%; 
+  z-index: 100;
+}
+.shadow-inside{
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 55%;
+  z-index: 200;
+}
+.inside-top{
+  padding: 10px;
+}
+.inside-bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid  rgba(0,0,0,0.5);
+}
+.item-title{
+  margin-bottom: 5px;
+  color: #303841;
+}
+.bottom-btn{
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  padding: 8px;
+  color: #3a4750;
+}
+.bottom-btn:nth-child(1){
+  border-right: 1px solid  rgba(0,0,0,0.5);
+}

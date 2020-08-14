@@ -6,10 +6,16 @@ Component({
    */
   properties: {
     income: {
-      type: Number
+      type: Number,
+      value:0
     },
     expenditure: {
-      type: Number
+      type: Number,
+      value:0
+    },
+    type:{
+      type:Number,
+      value:0
     }
   },
 

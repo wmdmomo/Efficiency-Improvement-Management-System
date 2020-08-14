@@ -1,13 +1,17 @@
 <!--pages/components/moneyicon/moneyicon.wxml-->
+<wxs module="format" src="../../../utils/format.wxs"></wxs>
 <view>
-	<swiper indicator-dots="true" interval="2000" duration="1000">
+	<swiper indicator-dots="true" interval="2000" duration="1000" current="{{curIndex}}">
 		<block wx:for="{{newData}}" wx:key="index">
 			<swiper-item class="icon-board">
-				<view wx:for="{{item}}" wx:key="path" wx:for-item="key" class="icon-tip" bindtap="iconSuc" data-index="{{index}}" data-name="{{key.name}}">
-					<image class="icon-img" src="{{key.path}}"></image>
+				<view wx:for="{{item}}" wx:key="path" wx:for-item="key" class="icon-tip" bindtap="iconSuc" data-index="{{key.id}}" data-name="{{key.name}}">
+					<image class="icon-img" src="{{format.pathFixed(key.id)}}"></image>
 					<text class="icon-name">{{key.name}}</text>
 				</view>
 			</swiper-item>
 		</block>
 	</swiper>
+	
+		<addicon iconShow="{{iconShow}}" bind:addIcon="addIcon"></addicon>
+
 </view>

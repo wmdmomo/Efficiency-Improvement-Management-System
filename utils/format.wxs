@@ -14,8 +14,13 @@ var filter = {
     }
   },
   numberFixed: function (num) {
+    if(num==0) return "0.00"
     return num.toFixed(2)
 
+  },
+  moneyFixed:function(num){
+    if(num=="") return "0.00"
+    return num
   },
   weekFixed: function (date) {
     var dateStr = date
@@ -26,11 +31,17 @@ var filter = {
       dateStr,
       dayOfWeek
     }
+  },
+  pathFixed: function (id) {
+    // 从根目录开始寻找
+    return "/pages/image/icons/"+id+".png"
   }
 }
 module.exports = {
   timeFixed: filter.timeFixed,
   titleFixed: filter.titleFixed,
   weekFixed: filter.weekFixed,
-  numberFixed: filter.numberFixed
+  numberFixed: filter.numberFixed,
+  pathFixed: filter.pathFixed,
+  moneyFixed:filter.moneyFixed
 }

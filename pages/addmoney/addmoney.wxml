@@ -1,13 +1,14 @@
 <!--pages/money/addmoney/addmoney.wxml-->
+<wxs module="format" src="../../utils/format.wxs"></wxs>
 <view class="add-all">
 	<view class="switch-container">
-	<image class="del-icon" src="./del.png" bindtap="goBack"></image>
+		<image class="del-icon" src="./del.png" bindtap="goBack"></image>
 		<moneyswitch class="switch-out" switchlist="{{switchlist}}" bind:switchTag="switchTag"></moneyswitch>
 	</view>
 	<view class="add-row">
 		<text class="money-name">账单金额</text>
 		<view class="money-right">
-			<input class="money-val val-input" model:value="{{val}}"> </input>
+			<input class="money-val val-input" model:value="{{format.moneyFixed(val)}}"> </input>
 		</view>
 	</view>
 	<moneyicon class="add-row2" bind:iconSwitch="iconSwitch"></moneyicon>
@@ -23,5 +24,5 @@
 		<!-- 要做一个日历的控件 -->
 		<input class="record-detail" placeholder="请输入备注信息（最多140个字）"></input>
 	</view>
-	<keyboard class="key-board" bind:moneySuc="moneyFun"></keyboard>
+	<keyboard class="key-board" bind:moneySuc="moneyFun" num="{{val}}"></keyboard>
 </view>

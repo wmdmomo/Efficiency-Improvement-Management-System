@@ -4,63 +4,26 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    curIndex:{
+      type:Number,
+      value:0
+    }
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    iconlist: [{
-        path: "../../image/icons/0.png",
-        name: "奖金"
-      },
-      {
-        path: "../../image/icons/1.png",
-        name: "服饰"
-      },
-      {
-        path: "../../image/icons/2.png",
-        name: "餐饮"
-      },
-      {
-        path: "../../image/icons/3.png",
-        name: "水果"
-      },
-      {
-        path: "../../image/icons/4.png",
-        name: "礼物"
-      },
-      {
-        path: "../../image/icons/5.png",
-        name: "美容"
-      },
-      {
-        path: "../../image/icons/6.png",
-        name: "购物"
-      },
-      {
-        path: "../../image/icons/7.png",
-        name: "零食"
-      },
-      {
-        path: "../../image/icons/8.png",
-        name: "学习"
-      },
-      {
-        path: "../../image/icons/9.png",
-        name: "交通"
-      },
-      {
-        path: "../../image/icons/10.png",
-        name: "旅行"
-      }
-    ]
-
-
+    iconShow: 0,
+    
+    iconlist: []
 
   },
-  attached: function () {
+  attached: async function () {
+    var res = await wx.getStorageSync('icon')
+    this.setData({
+      iconlist: res
+    })
     this.swiper(this.data.iconlist, 10)
   },
   /**
@@ -68,11 +31,31 @@ Component({
    */
   methods: {
     iconSuc: function (e) {
-      // 返回选择的icon的图标序列和名字
-      this.triggerEvent('iconSwitch', {
-        index: e.currentTarget.dataset.index,
-        name: e.currentTarget.dataset.name
+      var index = e.currentTarget.dataset.index
+      if (index == 11) {
+        this.setData({
+          iconShow: 1
+        })
+      } else {
+        // 返回选择的icon的图标序列和名字
+        this.triggerEvent('iconSwitch', {
+          index: index,
+          name: e.currentTarget.dataset.name
+        })
+      }
+    },
+    addIcon: function (e) {
+      var obj = {
+        id: 12,
+        name: e.detail
+      }
+      var len = this.data.iconlist.length
+      this.data.iconlist.splice(len - 1, 0, obj)
+      wx.setStorageSync('icon', this.data.iconlist)
+      this.setData({
+        iconlist: this.data.iconlist
       })
+      this.swiper(this.data.iconlist, 10)
     },
     swiper(arr, size) {
       let that = this

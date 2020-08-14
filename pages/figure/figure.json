@@ -1,5 +1,8 @@
 {
   "usingComponents": {
-    "tabbar":"../../tabbarComponent/tabbar"
+    "tabbar":"../../tabbarComponent/tabbar",
+    "ring":"../components/progress/progress",
+    "banner":"../components/banner/banner",
+    "figureitem":"../components/figureitem/figureitem"
   }
 }

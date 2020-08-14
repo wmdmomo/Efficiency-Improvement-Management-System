@@ -15,7 +15,6 @@
 .banner-detail {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
 .banner-item {
@@ -50,4 +49,11 @@
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
   border-top: 8px solid #fef9fa;
+}
+.banner-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1 1 auto;
+  margin-left: 20%;
 }

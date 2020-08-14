@@ -1,0 +1,67 @@
+/* pages/components/figureitem/figureitem.wxss */
+.figure-all {
+  padding: 10px;
+  margin-bottom: 8%;
+}
+
+.figure-banner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid whitesmoke;
+  padding: 2% 0;
+  margin-bottom: 7%;
+}
+
+.figure-item {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid whitesmoke;
+  padding: 3% 0;
+}
+
+
+.banner-icon image {
+  width: 40px;
+  height: 40px;
+}
+
+.banner-name {
+  flex: 1 0 auto;
+  color: #666666;
+}
+
+.banner-percent {
+  margin-left: 2%;
+}
+
+.banner-val {
+  display: flex;
+  flex-direction: row;
+  color: #999999;
+}
+
+.item-detail {
+  margin-left: 5%;
+  flex: 1 0 auto;
+}
+
+.item-val {
+  display: flex;
+  flex-direction: row;
+  color: #999999;
+}
+
+.figure-title {
+  color: #999999;
+}
+
+
+
+.item-id {
+  color: #999999;
+}
+
+.item-red {
+  color: #ff6600;
+}

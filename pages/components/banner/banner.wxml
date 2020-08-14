@@ -1,0 +1,40 @@
+<!--pages/components/moneytop/moneytop.wxml-->
+<wxs module="format" src="../../../utils/format.wxs"></wxs>
+<view class="banner-top">
+	<view>
+		<text class="banner-title" wx:if="{{type}}">明细</text>
+		<text class="banner-title" wx:else>图表</text>
+	</view>
+	<view class="banner-detail">
+		<view class="banner-item">
+			<picker mode="date" fields="month" bindchange="bindDateChange">
+				<view>{{year}}</view>
+				<view class="item-bold item-more">
+					<text>{{month}}</text>
+					<text class="text-small">月</text>
+					<view class="triangle" bindtap="monthSwitch"></view>
+				</view>
+			</picker>
+		</view>
+		<view wx:if="{{type}}" class="banner-info">
+			<view class="banner-item">
+				<view>收入</view>
+				<view>{{format.numberFixed(income)}}</view>
+			</view>
+			<view class="banner-item">
+				<view>支出</view>
+				<view>{{format.numberFixed(expenditure)}}</view>
+			</view>
+		</view>
+		<view wx:else class="banner-info">
+			<view class="banner-item">
+				<view>预算</view>
+				<view>{{format.numberFixed(budget)}}</view>
+			</view>
+			<view class="banner-item">
+				<view>相比上月支出</view>
+				<view>{{format.numberFixed(budget)}}</view>
+			</view>
+		</view>
+	</view>
+</view>

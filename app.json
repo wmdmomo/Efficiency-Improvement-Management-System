@@ -5,9 +5,9 @@
     "pages/todo/todo",
     "pages/daka/daka",
     "pages/feel/feel",
+    "pages/addmoney/addmoney",
     "pages/money/money",
     "pages/todo/todolist/todolist",
-    "pages/addmoney/addmoney",
     "pages/figure/figure"
   ],
   "window": {

@@ -1,5 +1,5 @@
 <view>
-	<banner bind:reqMoney="reqMoney" income="{{income}}" expenditure="{{expenditure}}"></banner>
+	<banner bind:reqMoney="reqMoney" income="{{income}}" expenditure="{{expenditure}}" type="1"></banner>
 	<view wx:if="{{moneyList.length>0}}" class="money-container">
 		<view wx:for="{{moneyList}}" wx:for-item="moneylist" wx:key="date">
 			<money moneylist="{{moneylist}}"></money>

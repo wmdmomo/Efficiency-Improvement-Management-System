@@ -1,12 +1,24 @@
 // pages/money/figure/figure.js
-const app=getApp()
+const app = getApp()
+var util = require('../../utils/util')
+import {
+  getFigure
+} from './../service/api'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tabbar:{}
+    tabbar: {},
+    in_list: [],
+    in_val: 0,
+    exp_list: [],
+    exp_val: 0,
+    choiceList: {},
+    choiceTotal: 0,
+    choiceType: 0,
+    choiceIndex: 0
   },
 
   /**
@@ -14,54 +26,42 @@ Page({
    */
   onLoad: function () {
     app.editTabbar()
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+    this.reqMoney()
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+  reqMoney: async function (e) {
+    var res = util.formatYM(new Date())
+    var obj = {
+      year: e ? e.detail.year : res[0],
+      month: e ? e.detail.month : res[1],
+      usr: app.globalData.userInfo.nickName
+    }
+    var ans = await getFigure(obj)
+    this.setData({
+      in_val: ans.in_money,
+      exp_val: ans.exp_money,
+      in_list: ans.incomeList,
+      exp_list: ans.expList,
+      choiceList: ans.expList[0],
+      choiceTotal: ans.exp_money,
+      choiceType: 0
+    })
 
   },
+  figureSwitch: function (e) {
+    var type = Number(e.detail.type)
+    var index = e.detail.index
+    var total = type ? this.data.in_val : this.data.exp_val
+    var list = type ? this.data.in_list[index] : this.data.exp_list[index]
+    var typeTitle = app.globalData.iconlist[list.tag].name
+    console.log("LOOK " + type,index);
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    this.setData({
+      choiceType: type,
+      choiceTotal: total,
+      choiceList: list,
+      typeTitle: typeTitle
+    })
   }
 })

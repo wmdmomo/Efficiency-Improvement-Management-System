@@ -1,0 +1,15 @@
+<!--pages/components/addicon/addicon.wxml-->
+<view class="icon-out" wx:if="{{iconShow}}">
+	<view class="icon-shadow">
+	</view>
+	<view class="shadow-inside">
+		<view class="inside-top">
+			<view class="item-title">请输入类别名称</view>
+			<input model:value="{{newTag}}" placeholder="最长输入4个字"></input>
+		</view>
+		<view class="inside-bottom">
+			<view class="bottom-btn" data-flag="0" bindtap="addSuc">取消</view>
+			<view class="bottom-btn" data-flag="1" bindtap="addSuc">确定</view>
+		</view>
+	</view>
+</view>

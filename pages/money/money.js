@@ -28,6 +28,5 @@ Page({
       income: res.all_income,
       expenditure: res.all_exp
     })
-
   }
 })

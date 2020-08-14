@@ -1,0 +1,37 @@
+<!--pages/components/figureitem/figureitem.wxml-->
+<wxs module="format" src="../../../utils/format.wxs"></wxs>
+<view class="figure-all" wx:if="{{itemList}}">
+	<view class="figure-banner">
+		<view class="banner-icon" wx:if="{{itemList.tag>=0}}">
+			<image src="{{format.pathFixed(itemList.tag)}}"></image>
+		</view>
+		<view class="banner-name">
+			<text>{{typeTitle}}</text>
+			<text class="banner-percent">{{format.numberFixed(itemList.val / total * 100)}}%</text>
+		</view>
+		<view class="banner-val">
+			<view wx:if="{{type==0}}">-</view>
+			<view wx:else>+</view>
+			<view>{{itemList.val}}
+			</view>
+		</view>
+	</view>
+	<view class="figure-title">
+		<text>{{typeTitle}}</text>
+		<text wx:if="{{type==0}}">支出</text>
+		<text wx:else>收入</text>
+		<text>排行榜</text>
+	</view>
+	<view class="figure-list">
+		<view class="figure-item" wx:for="{{itemList.details}}" wx:key="id">
+			<view class="item-id {{index<3?'item-red':''}}">{{index+1}}</view>
+			<view class="item-detail" wx:if="{{item.remark==''}}">{{item.name}}</view>
+			<view class="item-detail" wx:else>{{item.remark}}</view>
+			<view class="item-val">
+				<view wx:if="{{item.flag==0}}">-</view>
+				<view wx:else>+</view>
+				<text>{{format.numberFixed(item.money)}}</text>
+			</view>
+		</view>
+	</view>
+</view>

@@ -10,7 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    val: "0.00",
+    val: "",
     time: '2020-07-30',
     switchlist: ["收入", "支出"],
     money: {
@@ -24,7 +24,20 @@ Page({
       year: '',
       month: '',
       day: ''
-    }
+    },
+    money_copy: {
+      name: '奖金',
+      flag: 0,
+      tag: 0,
+      money: 0,
+      time: '',
+      remark: '',
+      usr: '',
+      year: '',
+      month: '',
+      day: ''
+    },
+    time_copy:''
   },
 
   /**
@@ -40,7 +53,8 @@ Page({
     this.data.money["day"] = r1[2]
     this.setData({
       money: this.data.money,
-      time: r0
+      time: r0,
+      time_copy:r0
     })
   },
 
@@ -98,9 +112,7 @@ Page({
       var res = await addMoney(this.data.money)
       console.log(res);
       // 向后台添加一条数据
-      this.setData({
-        val: 0
-      })
+      
       this.goBack()
     }
   },
@@ -132,6 +144,11 @@ Page({
     })
   },
   goBack: function () {
+    this.setData({
+      val: 0,
+      time:this.data.time_copy,
+      money:this.data.money_copy
+    })
     // 跳转到前一页并且刷新数据
     wx.switchTab({
       url: '../money/money',

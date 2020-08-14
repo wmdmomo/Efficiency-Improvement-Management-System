@@ -1,1 +1,4 @@
 /* pages/money/figure/figure.wxss */
+.figure-inside{
+  overflow: scroll;
+}

@@ -10,11 +10,11 @@ const formatTime = date => {
 }
 
 //当flag=1的时候返回 "2020-07-31"的形式 当flag=0返回 "2020" "07" "30"
-const formatYMD = (date,flag) => {
+const formatYMD = (date, flag) => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()
-  if(flag) return [year, month, day].map(formatNumber).join('-')
+  if (flag) return [year, month, day].map(formatNumber).join('-')
   else return [year, month, day].map(formatNumber)
 }
 const formatYM = date => {
@@ -27,6 +27,7 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+
 module.exports = {
   formatTime: formatTime,
   formatYMD: formatYMD,

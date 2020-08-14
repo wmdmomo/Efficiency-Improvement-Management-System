@@ -1,8 +1,15 @@
 //app.js
+
 App({
   onLaunch: function () {
+    
+
     wx.hideTabBar()
     // 展示本地存储能力
+    wx.setStorage({
+      data: this.globalData.iconlist,
+      key: 'icon',
+    })
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
@@ -41,14 +48,7 @@ App({
     let currentPages = getCurrentPages();
     let _this = currentPages[currentPages.length - 1];
     let pagePath = _this.route;
-
     (pagePath.indexOf('/') != 0) && (pagePath = '/' + pagePath);
-
-
-    // if(pagePath.indexOf('/') != 0){
-    //   pagePath = '/' + pagePath;
-    // } 
-
     for (let i in tabbar.list) {
       tabbar.list[i].selected = false;
       (tabbar.list[i].pagePath == pagePath) && (tabbar.list[i].selected = true);
@@ -59,6 +59,55 @@ App({
   },
   globalData: {
     userInfo: null,
+    iconlist: [{
+        id: 0,
+        name: "奖金"
+      },
+      {
+        id: 1,
+        name: "服饰"
+      },
+      {
+        id: 2,
+        name: "餐饮"
+      },
+      {
+        id: 3,
+        name: "水果"
+      },
+      {
+        id: 4,
+        name: "礼物"
+      },
+      {
+        id: 5,
+        name: "美容"
+      },
+      {
+        id: 6,
+        name: "购物"
+      },
+      {
+        id: 7,
+        name: "零食"
+      },
+      {
+        id: 8,
+        name: "学习"
+      },
+      {
+        id: 9,
+        name: "交通"
+      },
+      {
+        id: 10,
+        name: "旅行"
+      },
+      {
+        id: 11,
+        name: "添加"
+      }
+    ],
     tabBar: {
       "backgroundColor": "#ffffff",
       "color": "#979795",
