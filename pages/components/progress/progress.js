@@ -103,6 +103,53 @@ Component({
         return item;
       })
     },
+    drawLegend(context, series, count, x, y) {
+      var pieSeries = this.cailPieAngle(series, count, 1)
+      var radius = this.data.height / 2 + 40
+      context.font = "50px sans-serif"
+      for (let i = 0; i < pieSeries.length; i++) {
+        var off_x = 0,
+          off_y = 0,
+          legend_x = 0,
+          legend_y = 0,
+          angle = 0
+        if (i != pieSeries.length - 1) {
+          angle = (pieSeries[i + 1].startAngle + pieSeries[i].startAngle) / 2
+        } else {
+          angle = (Math.PI * 2 + pieSeries[i].startAngle) / 2
+        }
+console.log(angle);
+
+        if (angle <= Math.PI / 2) {
+          
+          
+          off_x = Math.cos(angle) * radius
+          off_y = Math.sin(angle) * radius
+          legend_x = off_x + x
+          legend_y = off_y + y
+        } else if (angle > Math.PI / 2 && angle < Math.PI) {
+          off_x = Math.cos(Math.PI - angle) * radius
+          off_y = Math.sin(Math.PI - angle) * radius
+          legend_x = x - off_x
+          legend_y = off_y + y
+        } else if (angle < 3 * Math.PI / 2 && angle >= Math.PI) {
+          off_x = Math.cos(angle - Math.PI) * radius
+          off_y = Math.sin(angle - Math.PI) * radius
+          legend_x = x - off_x
+          legend_y = y - off_y
+        } else {
+          off_x = Math.cos(2 * Math.PI - angle) * radius
+          off_y = Math.sin(2 * Math.PI - angle) * radius
+          legend_x = off_x + x
+          legend_y = y - off_y
+        }
+        console.log(pieSeries[i].proportion, legend_x, legend_y);
+        context.beginPath()
+        context.fillText(pieSeries[i].proportion.toFixed(2), legend_x, legend_y);
+        context.closePath();
+        // context.stroke();
+      }
+    },
     drawPie(ctx, series, x, y, radius, count, line, process, flag) {
       var pieSeries = this.cailPieAngle(series, count, process)
       this.setData({
@@ -114,6 +161,7 @@ Component({
         ctx.lineWidth = line
         ctx.arc(x, y, radius, item.startAngle, item.startAngle + 2 * Math.PI * item.proportion)
         //数组为空 前面让他有一个占了100%的单元项 还要在判断一下金钱是是否为0
+        //新增加图注 圆环旁边的注释及百分比
         if (pieSeries.length == 1 && this.data.total == 0) {
           ctx.strokeStyle = "#a4a4a4"
         } else {
@@ -132,6 +180,7 @@ Component({
           }
         }
         ctx.stroke()
+        // ctx.closePath()
       })
     },
     showRing: function (itemlist, total, flag) {
@@ -164,8 +213,10 @@ Component({
             duration: 1000,
             onProcess: (process) => {
               this.drawPie(ctx, itemlist, x, y, radius, this.data.total, line, process, flag)
+
             }
           })
+          this.drawLegend(ctx, itemlist, this.data.total, x, y)
         })
     },
     switchItem: function () {
