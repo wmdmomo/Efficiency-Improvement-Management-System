@@ -28,8 +28,38 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function measureText (text, fontSize=50) {
+  // wx canvas 未实现measureText方法, 此处自行实现
+  text = String(text);
+  var text = text.split('');
+  var width = 0;
+  text.forEach(function(item) {
+      if (/[a-zA-Z]/.test(item)) {
+          width += 7;
+      } else if (/[0-9]/.test(item)) {
+          width += 5.5;
+      } else if (/\./.test(item)) {
+          width += 2.7;
+      } else if (/-/.test(item)) {
+          width += 3.25;
+      } else if (/[\u4e00-\u9fa5]/.test(item)) {
+          width += 10;
+      } else if (/\(|\)/.test(item)) {
+          width += 3.73;
+      } else if (/\s/.test(item)) {
+          width += 2.5;
+      } else if (/%/.test(item)) {
+          width += 8;
+      } else {
+          width += 10;
+      }
+  });
+  return width * fontSize / 10;
+}
+
 module.exports = {
   formatTime: formatTime,
   formatYMD: formatYMD,
-  formatYM: formatYM
+  formatYM: formatYM,
+  measureText:measureText
 }
