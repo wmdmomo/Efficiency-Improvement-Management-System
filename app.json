@@ -7,8 +7,10 @@
     "pages/feel/feel",
     "pages/addmoney/addmoney",
     "pages/money/money",
+    "pages/budget/budget",
     "pages/todo/todolist/todolist",
-    "pages/figure/figure"
+    "pages/figure/figure",
+    "pages/complete/complete"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -42,7 +44,6 @@
         "selectedIconPath": "tabbarComponent/icon/detail1.png"
       },
       {
-
         "pagePath": "pages/figure/figure",
         "text": "图表",
         "iconPath": "tabbarComponent/icon/figure.png",

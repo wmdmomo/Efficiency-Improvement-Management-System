@@ -7,25 +7,35 @@ Component({
   properties: {
     income: {
       type: Number,
-      value:0
+      value: 0
     },
     expenditure: {
       type: Number,
-      value:0
+      value: 0
     },
-    type:{
+    budget: {
+      type: Number,
+      value: 500
+    },
+    subbudget: {
+      type: Number,
+      value: 500
+    },
+    type: {
+      type: Number,
+      value: 0
+    },
+    expval:{
       type:Number,
       value:0
     }
   },
-
   /**
    * 组件的初始数据
    */
   data: {
     year: '',
-    month: '',
-    budget:0
+    month: ''
   },
   attached: function () {
     var res = util.formatYM(new Date())
@@ -49,7 +59,11 @@ Component({
         year: this.data.year,
         month: this.data.month
       })
+    },
+    setBudget: function () {
+      wx.navigateTo({
+        url: `/pages/budget/budget?had=${this.data.expval}&bud=${this.data.budget}`,
+      })
     }
-
   }
 })

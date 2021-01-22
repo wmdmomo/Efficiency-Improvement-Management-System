@@ -1,0 +1,7 @@
+/* pages/components/complete/complete.wxss */
+.com-container{
+  border-radius: 5px;
+  background-color: #ffff;
+  display: flex;
+  padding: 2%;
+}

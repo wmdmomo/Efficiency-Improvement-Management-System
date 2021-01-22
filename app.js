@@ -2,8 +2,6 @@
 
 App({
   onLaunch: function () {
-    
-
     wx.hideTabBar()
     // 展示本地存储能力
     wx.setStorage({
@@ -39,9 +37,8 @@ App({
           })
         }
       }
-
-
     })
+    
   },
   editTabbar: function () {
     let tabbar = this.globalData.tabBar;

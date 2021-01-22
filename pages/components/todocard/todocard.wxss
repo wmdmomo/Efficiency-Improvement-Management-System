@@ -19,6 +19,10 @@
   transform:translate(50%,-50%);
   background-color: tomato;
   color: white;
+  font-family: 'shouxieti';
+  font-size: 56rpx;
+  width: 16%;
+  text-align: center;
 }
 .card-top-other{
   padding: 10px 0;
@@ -26,14 +30,17 @@
   background-color: tomato;
   color: white;
   text-align: center;
+  font-family: 'shouxieti';
+  font-size: 55rpx;
 }
 .card-list{
-  color: #4d4545;
+  color: #4d4545c7;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5px;
+  font-size: 30rpx;
 }
 .title-color0{
   background-color: teal;
@@ -42,6 +49,6 @@
   background-color: #ffaa64;
 }
 .list-do{
-  color: #808080;
+  color: #8b8b8b;
   text-decoration: line-through;
 }

@@ -1,6 +1,6 @@
 <!--pages/money/figure/figure.wxml-->
 <view>
-	<banner bind:reqMoney="reqMoney" type="0"></banner>
+	<banner bind:reqMoney="reqMoney" type="0" budget="{{budget}}" subbudget="{{subbudget}}" expval="{{exp_val}}"></banner>
 	<view class="figure-inside">
 		<tabbar tabbar="{{tabbar}}"></tabbar>
 		<ring id="ring_id" ringList="{{ring_list}}" total="{{choiceTotal}}" type="{{choiceType}}" bind:figureSwitch="figureSwitch"></ring>

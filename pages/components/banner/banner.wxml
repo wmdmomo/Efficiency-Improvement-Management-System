@@ -27,13 +27,13 @@
 			</view>
 		</view>
 		<view wx:else class="banner-info">
-			<view class="banner-item">
+			<view class="banner-item" bindtap="setBudget">
 				<view>预算</view>
 				<view>{{format.numberFixed(budget)}}</view>
 			</view>
 			<view class="banner-item">
-				<view>相比上月支出</view>
-				<view>{{format.numberFixed(budget)}}</view>
+				<view>剩余预算</view>
+				<view>{{format.numberFixed(subbudget)}}</view>
 			</view>
 		</view>
 	</view>

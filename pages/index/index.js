@@ -7,6 +7,7 @@ Page({
     tabbar: {},
     userInfo: {},
     hasUserInfo: false,
+    fontFamily: 'shouxieti',
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
@@ -43,9 +44,6 @@ Page({
         }
       })
     }
-
-
-
   },
   getUserInfo: function (e) {
     app.globalData.userInfo = e.detail.userInfo

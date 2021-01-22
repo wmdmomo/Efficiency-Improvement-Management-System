@@ -1,0 +1,6 @@
+<!--pages/components/complete/complete.wxml-->
+<view class="com-container">
+	<view>
+    <ring id="ring_id" bind:close="close"></ring>
+	</view>
+</view>

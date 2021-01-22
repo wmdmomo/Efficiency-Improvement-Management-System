@@ -4,14 +4,12 @@
 	<swiper indicator-dots="true" interval="2000" duration="1000" current="{{curIndex}}">
 		<block wx:for="{{newData}}" wx:key="index">
 			<swiper-item class="icon-board">
-				<view wx:for="{{item}}" wx:key="path" wx:for-item="key" class="icon-tip" bindtap="iconSuc" data-index="{{key.id}}" data-name="{{key.name}}">
+				<view wx:for="{{item}}" wx:key="path" wx:for-item="key" class="icon-tip {{select==key.id?'icon-ano':''}}" bindtap="iconSuc" data-index="{{key.id}}" data-name="{{key.name}}">
 					<image class="icon-img" src="{{format.pathFixed(key.id)}}"></image>
-					<text class="icon-name">{{key.name}}</text>
+					<text class="icon-name {{select==key.id?'text-ano':''}}">{{key.name}}</text>
 				</view>
 			</swiper-item>
 		</block>
 	</swiper>
-	
-		<addicon iconShow="{{iconShow}}" bind:addIcon="addIcon"></addicon>
-
+	<addicon iconShow="{{iconShow}}" bind:addIcon="addIcon"></addicon>
 </view>

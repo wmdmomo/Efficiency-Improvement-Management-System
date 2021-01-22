@@ -49,9 +49,3 @@ export default function Animation (opts) {
 
     animationFrame(step, delay);
 }
-
-// stop animation immediately
-// and tigger onAnimationFinish
-// Animation.prototype.stop = function () {
-//     this.isStop = true;
-// }

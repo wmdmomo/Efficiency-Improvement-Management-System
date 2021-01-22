@@ -37,7 +37,10 @@
 }
 .add-radio button{
   width: 120px;
-  font-weight: 400;
+  font-family: 'shouxieti';
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 350;
 }
 
 .tag-image {
@@ -49,8 +52,12 @@
   padding: 4px;
   border-radius: 6px;
   color: white;
-  font-size: 14px;
+  font-size: 22px;
   background-color: #52616b;
+  font-family: 'shouxieti';
+  width: 20%;
+  display: flex;
+  justify-content: center;
 }
 
 .tag0 {

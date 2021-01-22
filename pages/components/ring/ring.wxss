@@ -1,4 +1,4 @@
-/* pages/components/progress/progress.wxss */
+/* pages/components/ring/ring.wxss */
 .canvas-out{
   display: flex;
   justify-content: center;
@@ -12,7 +12,4 @@
   flex-direction: column;
   align-items: center;
   color: #acacac;
-}
-.text-info{
-  font-size: 20px;
 }

@@ -1,4 +1,33 @@
 /**index.wxss**/
+page {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 95rpx 0; */
+  box-sizing: border-box;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://hbimg.huabanimg.com/a786fa0590bdbd216d8ec1f3f3a351e9b1515a516c2a8-mmcxHX_fw658/format/webp);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* filter: blur(2px); */
+  z-index: -1;
+}
+
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -13,30 +42,44 @@
 }
 
 .userinfo-nickname {
-  color: #aaa;
+  color: rgb(97, 93, 93);
 }
 
 .usermotto {
   margin-top: 200px;
 }
-.block-all{
-  margin-top: 40px;
-  width:100%;
-  height:400rpx;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.block-group{
+
+.block-all {
+  margin-top: 40%;
+  width: 85%;
   display: flex;
   justify-content: space-around;
 }
-.block-inside{
+
+
+.block-inside {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.block-inside image{
-  width:40px;
-  height: 40px;
+
+.block-inside image {
+  width: 50px;
+  height: 50px;
+}
+
+.text-info {
+  font-family: "shouxieti";
+  color: dimgray;
+  font-size: 50rpx;
+}
+
+.logo-info {
+  font-family: "shouxieti";
+  color: dimgray;
+  font-size: 80rpx;
+}
+
+.page {
+  height: 100%;
 }

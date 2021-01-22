@@ -3,7 +3,7 @@
 <view class="add-all">
 	<view class="switch-container">
 		<image class="del-icon" src="./del.png" bindtap="goBack"></image>
-		<moneyswitch class="switch-out" switchlist="{{switchlist}}" bind:switchTag="switchTag"></moneyswitch>
+		<moneyswitch class="switch-out" switchlist="{{switchlist}}" isTag="{{isTag}}" bind:switchTag="switchTag"></moneyswitch>
 	</view>
 	<view class="add-row">
 		<text class="money-name">账单金额</text>
@@ -15,7 +15,7 @@
 	<view class="money-record">
 		<view class="record-time">
 			<image class="time-img" src="./cal.png"></image>
-			<picker mode="date" value="{{time}}" start="2020-07-01" end="2021-07-01" bindchange="bindDateChange">
+			<picker mode="date" value="{{time}}" start="2020-07-01" end="2023-07-01" bindchange="bindDateChange">
 				<view class="picker">
 					{{time}}
 				</view>

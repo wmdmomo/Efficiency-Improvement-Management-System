@@ -1,21 +1,33 @@
 /* pages/components/moneyicon/moneyicon.wxss */
-.icon-board{
+.icon-board {
   display: flex;
   flex-wrap: wrap;
 }
-.icon-img{
+
+.icon-img {
   width: 30px;
   height: 30px;
   margin-bottom: 3px;
 }
-.icon-tip{
+
+.icon-tip {
   flex: 0 1 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 3px;
+  height: 35%;
 }
-.icon-name{
+
+.icon-name {
   font-size: small;
   color: #76777b;
+}
+
+.text-ano {
+  text-shadow: 0 0 10px #76777b, 0 0 20px #76777b, 0 0 30px #76777b, 0 0 40px #76777b;
+}
+
+.icon-ano {
+  box-shadow: 0 0 8px #DDD;
 }

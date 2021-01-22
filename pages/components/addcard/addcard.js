@@ -33,7 +33,7 @@ Component({
       console.log(this.data.detail);
       var obj = {
         name: app.globalData.userInfo.nickName,
-        time: util.formatYMD(new Date()),
+        time: util.formatYMD(new Date(), 1),
         detail: this.data.isDetail,
         flag: 0,
         tag: this.data.isTag
@@ -45,7 +45,7 @@ Component({
         tag: this.data.isTag
       })
       this.changeDel()
-      
+
     },
     changeTag: function (e) {
       this.data.isTag = e.currentTarget.dataset.tags

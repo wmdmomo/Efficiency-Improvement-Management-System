@@ -1,4 +1,18 @@
-<view class="container">
-	<navigator url="./todolist/todolist?item=today">Today</navigator>
-	<navigator url="./todolist/todolist?item=tomorrow">Tomorrow</navigator>
+<view>
+	<view class="todo-container">
+		<todocard title="紧急" todoList="{{p2List}}"></todocard>
+		<todocard title="一般" todoList="{{p1List}}"></todocard>
+		<todocard title="日常" todoList="{{p0List}}"></todocard>
+		<view class="todo-add">
+			<image wx:if="{{!add}}" src="./image/unadd.png" bindtap="changeImg"></image>
+			<image src="./image/com.png" bindtap="changeCom"></image>
+		</view>
+	</view>
+	<view wx:if="{{add}}" class="todo-shadow">
+		<addcard isClose="{{add}}" class="add-style" bindaddClose="addClose" bindaddSuc="addSuc"></addcard>
+	</view>
+	<view wx:if="{{com}}" class="todo-shadow">
+		<complete bindclose="comClose"></complete>
+	</view>
+	
 </view>

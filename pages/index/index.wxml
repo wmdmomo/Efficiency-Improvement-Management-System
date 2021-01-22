@@ -8,26 +8,16 @@
 		</block>
 	</view>
 	<view class="block-all">
-		<view class="block-group">
-			<navigator class="block-inside" url="../todo/todo">
-				<image src="./image/todo.png"></image>
-				<text>Todo</text>
-			</navigator>
-			<navigator class="block-inside" url="../daka/daka">
-				<image src="./image/daka.png"></image>
-				<text>打卡</text>
-			</navigator>
-		</view>
-		<view class="block-group">
-			<navigator class="block-inside" url="../feel/feel">
-				<image src="./image/riji.png"></image>
-				<text>心情</text>
-			</navigator>
-			<navigator class="block-inside" url="../money/money" open-type="switchTab">
-				<image src="./image/jizhang.png"></image>
-				<text>记账</text>
-			</navigator>
-		</view>
+		<navigator class="block-inside" url="../todo/todo">
+			<image src="./image/todo.png"></image>
+			<text class="text-info">Todo</text>
+		</navigator>
+		<navigator class="block-inside" url="../money/money" open-type="switchTab">
+			<image src="./image/jizhang.png"></image>
+			<text class="text-info">记账</text>
+		</navigator>
 	</view>
-
+	<view class="logo">
+		<text class="logo-info">记录你的生活</text>
+	</view>
 </view>

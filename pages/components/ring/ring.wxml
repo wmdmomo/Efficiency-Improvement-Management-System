@@ -1,0 +1,11 @@
+<!--pages/components/ring/ring.wxml-->
+<view class="canvas-out" bindtap="close">
+	<canvas type="2d" style="height:{{height}}px;width:{{width}}px" id="myCanvas">
+	</canvas>
+	<view class="canvas-text" bindtap="switchItem">
+		<view class="text-inside">
+			<text>用户完成度</text>
+			<text class="text-info">{{com}}%</text>
+		</view>
+	</view>
+</view>

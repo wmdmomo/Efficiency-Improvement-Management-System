@@ -4,9 +4,9 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    curIndex:{
-      type:Number,
-      value:0
+    curIndex: {
+      type: Number,
+      value: 0
     }
   },
 
@@ -15,7 +15,7 @@ Component({
    */
   data: {
     iconShow: 0,
-    
+    select: 0,
     iconlist: []
 
   },
@@ -38,6 +38,9 @@ Component({
         })
       } else {
         // 返回选择的icon的图标序列和名字
+        this.setData({
+          select: index
+        })
         this.triggerEvent('iconSwitch', {
           index: index,
           name: e.currentTarget.dataset.name

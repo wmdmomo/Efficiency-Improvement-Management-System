@@ -6,16 +6,14 @@ Component({
   properties: {
     switchlist: {
       type: Array
+    },
+    isTag:{
+      type:Number
     }
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
     isTag: 0
   },
-
   /**
    * 组件的方法列表
    */
@@ -25,7 +23,6 @@ Component({
         isTag: e.target.dataset.tag
       })
       this.triggerEvent('switchTag',this.data.isTag)
-
     }
   }
 })

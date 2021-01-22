@@ -16,7 +16,7 @@ Page({
     app.editTabbar()
   },
   reqMoney: async function (e) {
-    var res = util.formatYM(new Date())
+    var res = util.formatYM(new Date(), 0)
     var obj = {
       year: e ? e.detail.year : res[0],
       month: e ? e.detail.month : res[1],

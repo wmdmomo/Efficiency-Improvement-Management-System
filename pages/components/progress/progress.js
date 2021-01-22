@@ -1,6 +1,6 @@
 // pages/components/progress/progress.js
 var windWidth = wx.getSystemInfoSync().windowWidth
-const app=getApp()
+const app = getApp()
 import Animation from './../../../utils/animation'
 import {
   measureText
@@ -34,7 +34,7 @@ Component({
     y_position: 0,
     height: windWidth * 0.5 + 40,
     index: 0,
-    exp_color: ["#ffd460", "#ffcf7f", "#ffde7d", "#f9ed69", "#fce38a"],
+    exp_color: ["#FCE38A", "#FFD487", "#FFC48E", "#ffde7d", "#f9ed69", "#fce38a", "#FFB59E"],
     in_color: ["#3c9099", "#1fab89", "#62d2a2", "#9df3c4", "#a7d7c5"],
     angleList: [],
     radius: 0,
@@ -57,8 +57,6 @@ Component({
       var cury = e.touches[0].clientY
       var x = this.data.x_position
       var y = this.data.height / 2 + e.currentTarget.offsetTop
-      console.log(x, y);
-
       var radius_in = this.data.height / 2 - this.data.radius / 2
       var radius_out = radius_in + this.data.radius / 2
       var angle = -1
@@ -113,23 +111,21 @@ Component({
       var pieSeries = this.cailPieAngle(series, count, 1)
       context.font = "35px sans-serif"
       for (let i = 0; i < pieSeries.length; i++) {
-        console.log(pieSeries[i].startAngle, pieSeries[i].proportion);
-
         var off_x = 0,
           off_y = 0,
           angle = 0,
           legend_x = 0,
           legend_y = 0,
-          text=''
+          text = ''
         angle = pieSeries[i].startAngle + pieSeries[i].proportion * Math.PI
-        text=`${app.globalData.iconlist[pieSeries[i].tag].name}${(pieSeries[i].proportion*100).toFixed(2)}%`
+        text = `${app.globalData.iconlist[pieSeries[i].tag].name}${(pieSeries[i].proportion*100).toFixed(2)}%`
         off_x = Math.cos(angle) * radius
         off_y = Math.sin(angle) * radius
         var textwidth = measureText(text)
         legend_x = off_x >= 0 ? off_x + x : x + off_x - textwidth
         legend_y = off_y + y
         context.beginPath()
-        context.fillStyle='#999999'
+        context.fillStyle = '#999999'
         context.fillText(text, legend_x, legend_y);
         context.closePath();
         // context.stroke();
@@ -176,8 +172,6 @@ Component({
           size: true
         })
         .exec((res) => {
-          console.log();
-
           const canvas = res[0].node
           const ctx = canvas.getContext('2d')
           const dpr = wx.getSystemInfoSync().pixelRatio
@@ -200,8 +194,6 @@ Component({
             x: this.data.x_position,
             y: this.data.height / 2 + res[0].node._top
           }
-          console.log(centerPosition);
-
           Animation({
             duration: 1000,
             onProcess: (process) => {
@@ -209,7 +201,7 @@ Component({
               this.drawLegend(ctx, itemlist, this.data.total, x, y, radius)
             }
           })
-          
+
           // drawPieText(this.data.angleList, config, ctx, radius, centerPosition)
         })
     },

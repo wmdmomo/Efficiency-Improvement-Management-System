@@ -1,0 +1,15 @@
+<!--pages/components/budget/budget.wxml-->
+<view class="budget-container">
+	<view class="budget-box">
+		<view class="bugget-info">
+			<text class="text-info">可根据需要调整通用额度</text>
+			<text class="text-info text-info2">当前已用额度{{had}}元</text>
+		</view>
+		<view class="bugget-info">
+			<!-- <input class="input-style" placeholder-class="placeholder-style" placeholder="500"></input> -->
+			<input class="input-style" model:value="{{budget}}" bindfocus="changeShow"></input>
+			<text class="text-info2">(调整以10为单位)</text>
+		</view>
+	</view>
+	<button class="button-style {{btnblur?'btn-ano':''}}" bindtap="setSuc">确定</button>
+</view>

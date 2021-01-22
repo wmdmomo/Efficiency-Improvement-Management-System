@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "todocard":"../components/todocard/todocard",
+    "addcard":"../components/addcard/addcard",
+    "complete":"../components/complete/complete"
+  }
 }
